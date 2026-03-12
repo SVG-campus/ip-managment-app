@@ -1,0 +1,56 @@
+{
+    "timestamp": "2026-03-11T14:31:34.395344",
+    "uspto_insights": {
+        "annual_pro_se_applications": 250000,
+        "pro_se_rejection_rate": 0.85,
+        "top_rejection_reasons": [
+            {
+                "reason": "Formatting/Clarity Issues (112 Rejections)",
+                "percentage": 0.45
+            },
+            {
+                "reason": "Prior Art Anticipation (102 Rejections)",
+                "percentage": 0.35
+            },
+            {
+                "reason": "Obviousness (103 Rejections)",
+                "percentage": 0.15
+            },
+            {
+                "reason": "Other Administrative",
+                "percentage": 0.05
+            }
+        ],
+        "average_cost_lawyer_prep": 12000,
+        "average_time_to_first_action_months": 18
+    },
+    "inventor_needs": [
+        {
+            "issue": "I don't know how to format my idea for the official form.",
+            "weight": 9.2
+        },
+        {
+            "issue": "I can't afford a $10,000 lawyer just to file a provisional.",
+            "weight": 8.8
+        },
+        {
+            "issue": "My idea is vague, I need help expanding the technical claims.",
+            "weight": 8.5
+        },
+        {
+            "issue": "I am afraid of making a mistake that invalidates my patent.",
+            "weight": 9.5
+        },
+        {
+            "issue": "Finding prior art is too difficult.",
+            "weight": 7.5
+        }
+    ],
+    "market_sizing": {
+        "Total_Addressable_Market_Users": 500000,
+        "Serviceable_Addressable_Market_Users": 200000.0,
+        "Serviceable_Obtainable_Market_Users_Y1": 20000.0,
+        "Est_Willingness_To_Pay_Monthly": 49.0
+    },
+    "core_thesis": "There is a massive gap between the $12,000 lawyer fee and the 85% rejection rate of DIY inventors. A formatting and augmenting UI can capture high MRR."
+}

@@ -1,0 +1,80 @@
+{
+    "recommended_name": "NovaDraft",
+    "backup_names": [
+        "PatentCanvas",
+        "IPDraft",
+        "BrainVault"
+    ],
+    "full_analysis": [
+        {
+            "name": "NovaDraft",
+            "domain_available": true,
+            "dot_com_price": 12.0,
+            "tm_collision_risk": "Low",
+            "viability_score": 90
+        },
+        {
+            "name": "PatentCanvas",
+            "domain_available": true,
+            "dot_com_price": 12.0,
+            "tm_collision_risk": "Low",
+            "viability_score": 90
+        },
+        {
+            "name": "IPDraft",
+            "domain_available": true,
+            "dot_com_price": 12.0,
+            "tm_collision_risk": "Low",
+            "viability_score": 85
+        },
+        {
+            "name": "BrainVault",
+            "domain_available": true,
+            "dot_com_price": 12.0,
+            "tm_collision_risk": "Low",
+            "viability_score": 80
+        },
+        {
+            "name": "ClaimCrafter",
+            "domain_available": true,
+            "dot_com_price": 12.0,
+            "tm_collision_risk": "Medium",
+            "viability_score": 75
+        },
+        {
+            "name": "IPFormat",
+            "domain_available": true,
+            "dot_com_price": 12.0,
+            "tm_collision_risk": "Medium",
+            "viability_score": 75
+        },
+        {
+            "name": "InventHub",
+            "domain_available": false,
+            "dot_com_price": "Taken/Premium",
+            "tm_collision_risk": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "PatentProse",
+            "domain_available": false,
+            "dot_com_price": "Taken/Premium",
+            "tm_collision_risk": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "InventIQ",
+            "domain_available": false,
+            "dot_com_price": "Taken/Premium",
+            "tm_collision_risk": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "IdeaToIP",
+            "domain_available": false,
+            "dot_com_price": "Taken/Premium",
+            "tm_collision_risk": "High",
+            "viability_score": 20
+        }
+    ]
+}
