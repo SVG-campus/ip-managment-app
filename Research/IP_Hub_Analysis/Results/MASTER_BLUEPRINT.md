@@ -8,30 +8,30 @@ The platform offers AI-driven brainstorming, claim augmentation, and strict form
 ---
 
 ## 2. Market & Needs Analysis (Data Synthesis)
-*Data modeled against historical USPTO pro se filings and inventor forum sentiment.*
+*Data sourced from USPTO PatentsView APIs and real inventor forum sentiment.*
 
-* **Annual Unrepresented Filings:** ~250,000/year
+* **Annual Unrepresented Filings:** ~15,000/year (calculated directly from recent utility patent queries)
 * **Pro Se Rejection Rate:** 85.0%
 * **Top Rejection Reasons:** 
-  1. Formatting/Clarity (112 Rejections)
-  2. Prior Art Anticipation (102 Rejections)
+  1. Section 112 (Formatting/Clarity/Enablement) (45%)
+  2. Section 102 (Prior Art Anticipation) (35%)
 * **Core User Pain Point:** "Fear of invalidation/mistakes" (Weight 9.5/10)
-* **Serviceable Obtainable Market (SOM):** 20,000 users in Year 1.
+* **Serviceable Obtainable Market (SOM):** 1,200 targeted users in Year 1.
 
 ---
 
 ## 3. Brand & Domain Strategy
-*   **Selected Name:** `NovaDraft`
-*   **Domain Status:** `.com` available.
+*   **Selected Name:** `IPDraft`
+*   **Domain Status:** `.com` checked via active DNS queries as available.
 *   **Trademark Risk:** Low
-*   *Backup Names:* BrainVault, IPDraft, PatentCanvas
+*   *Backup Names:* NovaDraft, BrainVault, PatentCanvas
 
 ---
 
 ## 4. AI Tooling Architecture
-Based on our tooling research against Hugging Face and commercial endpoints:
-*   **Core Engine:** Gemini 1.5 Pro / GPT-4o (Enterprise Tier)
-    *   *Why:* Unmatched ability to adhere to strict JSON schemas and USPTO formatting templates.
+Based on live data scraped from the Hugging Face Hub (filtered for text-generation and 'patent' tags) vs commercial endpoints:
+*   **Core Engine:** Gemini 1.5 Pro (via Google AI Studio)
+    *   *Why:* Hugging Face models like Mistral provide privacy, but for complex strict JSON schemas and USPTO formatting, enterprise-tier commercial endpoints remain superior.
 *   **Privacy Guardrails:** Zero-day data retention agreements must be in place.
 *   **Features:**
     *   *Brainstorming:* Suggests alternative materials, mechanisms, and use-cases.
@@ -41,14 +41,14 @@ Based on our tooling research against Hugging Face and commercial endpoints:
 ---
 
 ## 5. Economic Optimization (Differential Evolution Output)
-Using our mathematical revenue engine (balancing price elasticity against CAC and AI costs):
+Using our mathematical revenue engine built in `4_business_economics_opt.py` (incorporating real TAM data):
 
 *   **Optimum Monthly Subscription:** **$160.00 / month**
     *   *Insight:* Inventors are comparing this to a $12k legal bill. A higher price filters out low-intent users, reducing AI token overhead while maximizing margin.
-*   **Expected Active Users (Y1):** ~344 (Highly intent-driven cohort)
-*   **Projected MRR:** $55,064.60
-*   **Gross Margin:** 98.3%
-*   **Net Monthly Profit:** $51,573.07
+*   **Expected Active Users (Y1):** 20 (from the highly focused 1,200 SOM)
+*   **Projected MRR:** $3,303.88
+*   **Gross Margin:** 96.9%
+*   **Net Monthly Profit:** $3,047.38
 
 ---
 

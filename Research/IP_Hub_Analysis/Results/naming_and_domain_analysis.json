@@ -1,79 +1,93 @@
 {
-    "recommended_name": "NovaDraft",
+    "recommended_name": "IPDraft",
     "backup_names": [
-        "PatentCanvas",
-        "IPDraft",
-        "BrainVault"
+        "IPFormat",
+        "NovaDraftHQ",
+        "InventHub"
     ],
     "full_analysis": [
         {
-            "name": "NovaDraft",
-            "domain_available": true,
-            "dot_com_price": 12.0,
-            "tm_collision_risk": "Low",
-            "viability_score": 90
-        },
-        {
-            "name": "PatentCanvas",
-            "domain_available": true,
-            "dot_com_price": 12.0,
-            "tm_collision_risk": "Low",
-            "viability_score": 90
-        },
-        {
             "name": "IPDraft",
+            "domain_checked": "ipdraft.com",
             "domain_available": true,
-            "dot_com_price": 12.0,
-            "tm_collision_risk": "Low",
-            "viability_score": 85
-        },
-        {
-            "name": "BrainVault",
-            "domain_available": true,
-            "dot_com_price": 12.0,
-            "tm_collision_risk": "Low",
-            "viability_score": 80
-        },
-        {
-            "name": "ClaimCrafter",
-            "domain_available": true,
-            "dot_com_price": 12.0,
-            "tm_collision_risk": "Medium",
-            "viability_score": 75
+            "tm_collision_risk_heuristic": "Low",
+            "viability_score": 100
         },
         {
             "name": "IPFormat",
+            "domain_checked": "ipformat.com",
             "domain_available": true,
-            "dot_com_price": 12.0,
-            "tm_collision_risk": "Medium",
-            "viability_score": 75
+            "tm_collision_risk_heuristic": "Low",
+            "viability_score": 100
+        },
+        {
+            "name": "NovaDraftHQ",
+            "domain_checked": "novadrafthq.com",
+            "domain_available": true,
+            "tm_collision_risk_heuristic": "Low",
+            "viability_score": 90
         },
         {
             "name": "InventHub",
+            "domain_checked": "inventhub.com",
             "domain_available": false,
-            "dot_com_price": "Taken/Premium",
-            "tm_collision_risk": "High",
-            "viability_score": 20
-        },
-        {
-            "name": "PatentProse",
-            "domain_available": false,
-            "dot_com_price": "Taken/Premium",
-            "tm_collision_risk": "High",
-            "viability_score": 20
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 30
         },
         {
             "name": "InventIQ",
+            "domain_checked": "inventiq.com",
             "domain_available": false,
-            "dot_com_price": "Taken/Premium",
-            "tm_collision_risk": "High",
-            "viability_score": 20
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 30
+        },
+        {
+            "name": "NovaDraft",
+            "domain_checked": "novadraft.com",
+            "domain_available": false,
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 30
         },
         {
             "name": "IdeaToIP",
+            "domain_checked": "ideatoip.com",
             "domain_available": false,
-            "dot_com_price": "Taken/Premium",
-            "tm_collision_risk": "High",
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 30
+        },
+        {
+            "name": "PatentProse",
+            "domain_checked": "patentprose.com",
+            "domain_available": false,
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "ClaimCrafter",
+            "domain_checked": "claimcrafter.com",
+            "domain_available": false,
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "BrainVault",
+            "domain_checked": "brainvault.com",
+            "domain_available": false,
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "PatentCanvas",
+            "domain_checked": "patentcanvas.com",
+            "domain_available": false,
+            "tm_collision_risk_heuristic": "High",
+            "viability_score": 20
+        },
+        {
+            "name": "PatentNova",
+            "domain_checked": "patentnova.com",
+            "domain_available": false,
+            "tm_collision_risk_heuristic": "High",
             "viability_score": 20
         }
     ]

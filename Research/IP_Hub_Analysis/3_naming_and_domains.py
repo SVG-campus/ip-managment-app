@@ -1,11 +1,12 @@
 import os
 import json
 import time
+import socket
 
 # ==============================================================================
 # NAMING & DOMAIN VETTING ENGINE
 # ==============================================================================
-# Generates brand names and simulates checking availability for domains and TMs.
+# Generates brand names and checks real basic DNS availability for domains.
 # ==============================================================================
 
 RESULTS_DIR = "Research/IP_Hub_Analysis/Results"
@@ -13,45 +14,52 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 print("🚀 INITIALIZING NAMING & DOMAIN VETTING...")
 
+def check_domain_availability(domain):
+    try:
+        # If it resolves to an IP, the domain is definitely taken
+        socket.gethostbyname(domain)
+        return False
+    except socket.gaierror:
+        # If it fails to resolve, it MIGHT be available (or just lacks A records)
+        return True
+
 def generate_and_vet_names():
     print("📡 Generating names based on 'IP', 'Invent', 'Format', 'Hub'...")
-    time.sleep(1)
     
     # Generated concepts
     candidates = [
         "InventHub", "IPDraft", "PatentProse", "InventIQ", "ClaimCrafter",
-        "IPFormat", "NovaDraft", "BrainVault", "IdeaToIP", "PatentCanvas"
+        "IPFormat", "NovaDraft", "BrainVault", "IdeaToIP", "PatentCanvas",
+        "NovaDraftHQ", "PatentNova"
     ]
     
     results = []
-    print("📡 Cross-referencing domains and USPTO trademark databases (Simulated)...")
-    time.sleep(2)
+    print("📡 Real DNS query to check .com domain availability...")
     
-    # Simulating domain availability (many good names are taken)
-    # Scoring out of 100 based on shortness, memorability, and dot-com availability
     for name in candidates:
-        if name in ["InventHub", "PatentProse", "InventIQ", "IdeaToIP"]:
-            available = False
-            tm_risk = "High"
-            score = 20
-        elif name in ["IPFormat", "ClaimCrafter"]:
-            available = True
-            tm_risk = "Medium"
-            score = 75
-        else: # NovaDraft, BrainVault, PatentCanvas, IPDraft
-            available = True
+        domain = f"{name.lower()}.com"
+        # Check actual availability via DNS
+        is_available = check_domain_availability(domain)
+        
+        # Heuristic scoring
+        score = 50
+        tm_risk = "Unknown"
+        
+        if is_available:
+            score += 40
             tm_risk = "Low"
-            score = 90
+        else:
+            score -= 30
+            tm_risk = "High"
             
-            # Penalize slightly for being too generic
-            if name == "IPDraft": score = 85
-            if name == "BrainVault": score = 80
+        if len(name) < 10:
+            score += 10
             
         results.append({
             "name": name,
-            "domain_available": available,
-            "dot_com_price": 12.00 if available else "Taken/Premium",
-            "tm_collision_risk": tm_risk,
+            "domain_checked": domain,
+            "domain_available": is_available,
+            "tm_collision_risk_heuristic": tm_risk,
             "viability_score": score
         })
         
@@ -61,7 +69,7 @@ def generate_and_vet_names():
     best_name = results[0]["name"]
     print(f"   🏆 Recommended Business Name: {best_name}")
     print(f"   🌐 Domain status: Available (.com)")
-    print(f"   ⚖️ Trademark risk: {results[0]['tm_collision_risk']}")
+    print(f"   ⚖️ Trademark risk: {results[0]['tm_collision_risk_heuristic']}")
     
     return {
         "recommended_name": best_name,

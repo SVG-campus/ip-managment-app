@@ -4,8 +4,15 @@ from scipy.optimize import differential_evolution
 import json
 import os
 
-# From our Market Analysis script:
-SOM_USERS = 20000  # Target users in Year 1
+print("Loading Real Data from Market Analysis...")
+# Dynamically load from the previously generated JSON output
+try:
+    with open('Research/IP_Hub_Analysis/Results/market_needs_analysis.json', 'r') as f:
+        market_data = json.load(f)
+        SOM_USERS = market_data.get('market_sizing', {}).get('Serviceable_Obtainable_Market_Users_Y1', 20000)
+except FileNotFoundError:
+    SOM_USERS = 20000
+
 LAWYER_COST = 12000 # Cost of alternative
 
 # Operational Costs
@@ -13,7 +20,7 @@ AI_COST_PER_USER_MONTH = 2.50 # Heavy use of Gemini 1.5 Pro / GPT-4 for generati
 HOSTING_COST_BASE = 50.00     # Vercel + Supabase Base
 CAC_BASE = 45.00              # Customer Acquisition Cost (Google/Meta Ads targeting 'how to patent')
 
-print("Base Economic Constants Loaded.")
+print(f"Base Economic Constants Loaded. SOM Users: {SOM_USERS:,}")
 
 def simulate_monthly_economics(price):
     if price <= 0: return -999999

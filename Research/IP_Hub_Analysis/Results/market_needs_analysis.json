@@ -1,19 +1,19 @@
 {
-    "timestamp": "2026-03-11T14:31:34.395344",
+    "timestamp": "2026-03-12T13:11:50.855540",
     "uspto_insights": {
-        "annual_pro_se_applications": 250000,
+        "annual_pro_se_applications": 15000,
         "pro_se_rejection_rate": 0.85,
         "top_rejection_reasons": [
             {
-                "reason": "Formatting/Clarity Issues (112 Rejections)",
+                "reason": "Section 112 (Formatting/Clarity/Enablement)",
                 "percentage": 0.45
             },
             {
-                "reason": "Prior Art Anticipation (102 Rejections)",
+                "reason": "Section 102 (Prior Art Anticipation)",
                 "percentage": 0.35
             },
             {
-                "reason": "Obviousness (103 Rejections)",
+                "reason": "Section 103 (Obviousness)",
                 "percentage": 0.15
             },
             {
@@ -47,9 +47,9 @@
         }
     ],
     "market_sizing": {
-        "Total_Addressable_Market_Users": 500000,
-        "Serviceable_Addressable_Market_Users": 200000.0,
-        "Serviceable_Obtainable_Market_Users_Y1": 20000.0,
+        "Total_Addressable_Market_Users": 30000,
+        "Serviceable_Addressable_Market_Users": 12000.0,
+        "Serviceable_Obtainable_Market_Users_Y1": 1200.0,
         "Est_Willingness_To_Pay_Monthly": 49.0
     },
     "core_thesis": "There is a massive gap between the $12,000 lawyer fee and the 85% rejection rate of DIY inventors. A formatting and augmenting UI can capture high MRR."

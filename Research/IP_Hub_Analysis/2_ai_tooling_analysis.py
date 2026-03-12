@@ -13,34 +13,40 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 print("🚀 INITIALIZING AI TOOLING EVALUATION...")
 
+import requests
+
 def evaluate_models():
-    print("📡 Querying Hugging Face / AI Endpoints (Simulated)...")
-    time.sleep(1)
+    print("📡 Querying Hugging Face Hub for real patent/legal models...")
     
-    # Simulating evaluation of different models for IP drafting
-    evaluations = [
-        {
-            "model_type": "Gemini 1.5 Pro / GPT-4o",
-            "category": "Commercial API",
-            "strengths": ["Excellent contextual understanding", "Follows strict JSON/Formatting instructions", "Vast prior art knowledge base"],
-            "weaknesses": ["Data privacy concerns (requires enterprise tier)", "Token cost at scale"],
-            "recommendation_score": 9.5
-        },
-        {
-            "model_type": "Llama 3 (70B) via Groq",
-            "category": "Open Source API",
-            "strengths": ["Extremely fast (good for iterative brainstorming)", "Cheaper than commercial APIs"],
-            "weaknesses": ["May hallucinate technical specifics if not grounded well"],
-            "recommendation_score": 8.0
-        },
-        {
-            "model_type": "Mistral Instruct (Local/Self-hosted)",
-            "category": "Open Source Self-Hosted",
-            "strengths": ["Total data privacy (crucial for unpatented IP)"],
-            "weaknesses": ["High infrastructure cost to host", "Lower reasoning capability vs Gemini/GPT4"],
-            "recommendation_score": 7.5
-        }
-    ]
+    # Hit the public Hugging Face API to find models tagged with 'legal' or 'patent'
+    try:
+        url = "https://huggingface.co/api/models?search=patent&filter=text-generation&sort=downloads&direction=-1&limit=5"
+        response = requests.get(url)
+        response.raise_for_status()
+        hf_models = response.json()
+        
+        evaluations = []
+        for model in hf_models:
+            evaluations.append({
+                "model_id": model.get("id"),
+                "downloads": model.get("downloads"),
+                "pipeline_tag": model.get("pipeline_tag"),
+                "category": "Open Source Self-Hosted",
+                "notes": f"Real model fetched from HF. Tagged: {model.get('pipeline_tag')}"
+            })
+            
+        print(f"   ✅ Fetched {len(evaluations)} open-source patent models from Hugging Face.")
+    except Exception as e:
+        print(f"   ⚠️ Error fetching from HF: {e}")
+        evaluations = []
+
+    # Add our high-tier commercial recommendation
+    evaluations.append({
+        "model_id": "Gemini 1.5 Pro (via Google AI Studio)",
+        "downloads": "N/A",
+        "category": "Commercial API",
+        "notes": "Optimal for complex formatting and zero-day privacy agreements (Enterprise tier)."
+    })
     
     # Feature capabilities mapping
     features = {
